@@ -34,5 +34,37 @@ $(document).ready(function() {
       }
     });
   });
+  
   map.fitLatLngBounds(bounds);
+
+  getMm5(
+    markers['Launch'].lat,
+    markers['Launch'].lng, 
+    function(err,imgUrl){
+      if (err) {
+        return 
+      }
+      
+      $('#mm5').attr('src',imgUrl);
+    }
+  );
+  
+  getBlipspot('blipspotSaddleO.html', function(err,blipspot,date){
+    if (err) {
+      console.log(err);
+    }
+    var table = document.createElement('table');
+    var tbody = document.createElement('tbody');
+    table.setAttribute('id','blipTable');
+    $(table).addClass('table table-striped');
+
+    $(tbody).html(blipspot);
+    $(table).html(tbody);
+
+    cleanBlipspot(table);
+    
+    $('#blipspot').html(table);
+    $('.blipDate').html(date)
+  });
+  
 });
