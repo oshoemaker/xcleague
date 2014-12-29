@@ -1,0 +1,59 @@
+/* Add here all your css styles (customizations) */
+.da-dots {
+  display: none;
+}
+
+.big-image {
+  position: relative; 
+  width: 100%; /* for IE 6 */
+  background-repeat: no-repeat;
+  background-size: contain;
+  background:url(../images/logo.png) no-repeat;
+  overflow: hidden;
+}
+
+.big-image img {
+  width: 100%;
+  min-width: 1024px;
+}
+
+.big-image span { 
+   position: absolute; 
+   top: 0px; 
+   left: 0; 
+   padding-left: 50px;
+   padding-right: 50px;
+   color: white; 
+   font: bold 32px/45px Helvetica, Sans-Serif; 
+   letter-spacing: -1px;  
+   background: rgb(0, 0, 0); /* fallback color */
+   background: rgba(0, 0, 0, 0.3);
+   text-align: center;
+   top: 30%;
+}
+
+.btn-file {
+    position: relative;
+    overflow: hidden;
+}
+
+.btn-file input[type=file] {
+    position: absolute;
+    top: 0;
+    right: 0;
+    min-width: 100%;
+    min-height: 100%;
+    font-size: 100px;
+    text-align: right;
+    filter: alpha(opacity=0);
+    opacity: 0;
+    outline: none;
+    background: white;
+    cursor: inherit;
+    display: block;
+}
+
+.too-wide {
+  overflow: auto;
+  overflow-y: hidden;
+}

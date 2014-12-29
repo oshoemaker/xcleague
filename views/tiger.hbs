@@ -1,0 +1,139 @@
+<div class="big-image" >
+  <img src="/images/tiger.jpg" alt="" />
+
+  <span>
+    Tiger Mountain
+  </span>
+</div>
+
+
+<div class="container content">
+  <div class="row tab-v3 margin-bottom-20">
+    <div class="col-sm-3">
+      <ul class="nav nav-pills nav-stacked"> 
+          <li class=""><a href="#location"><i class="fa fa-home"></i> Location</a></li>
+          <li class=""><a href="#forecast"><i class="fa fa-cloud"></i> Forecast</a></li>
+          <li class=""><a href="#conditions"><i class="fa fa-comments"></i> Conditions</a></li>
+          <li class=""><a href="#cameras"><i class="fa fa-camera"></i> Cameras</a></li>
+          <li class=""><a href="#waypoints"><i class="fa fa-cloud-download"></i> Waypoints</a></li>                        
+      </ul>                    
+    </div>
+
+    <div class="col-sm-9">
+      <div class="tab-content">
+        <div class="" id="home-2">
+            <h3>Tiger Mountain</h3>
+            
+            <p>Tiger mountain is the closest mountain flying site to Seattle Washington.  It is located 20 min East of seattle just outside the city of Issaquah.  Flying is possible all year round with the best XC potential in the spring.</p>
+            <p>There are two launches (north and south).  The launches are accessible via the chirico trail or by the tiger shuttle (<a href="http://tigershuttle.com/">http://tigershuttle.com/</a>).</p>
+        </div>   
+      </div>
+    </div>                                
+  </div>
+  
+  <div class="row margin-bottom-20">
+    <div id="location" class="col-md-6">
+      <div class="headline"><h3>Site Info</h3></div>
+      
+      <h3>North Launch</h4>
+      Elevation:  1,830'<br/>
+      Coordinates:  47.4997222, -122.0085278<br/>
+      Wind Direction:  West to North<br/> 
+      
+      <h3>South Launch</h3>
+      Elevation: 1,680'<br/>
+      Coordinates: 47.4966667, -122.0105556<br/>
+      Wind Direction: South
+      
+      <h3>LZ</h3>
+      Elevation:  180'<br/>
+      GPS Coordinates:  47.5004444, -122.0219722<br/>
+    </div>
+    <div class="col-md-6">
+      <!-- Basic Map -->
+      <div class="headline"><h3>Location</h3></div>
+      <div id="map" class="map margin-bottom-50"></div>
+      <!-- End Basic Map -->
+      <button class="btn btn-default btn-block" style="margin-top: -40px">Show Waypoints</button>
+    </div>
+  </div>
+
+  <div id="forecast" class="row">
+    <div class="col-md-12">
+      <div class="headline"><h3>Forecast</h3></div>
+    </div>
+    
+    <div class="col-md-12 too-wide">
+      <iframe id="forecast_embed" type="text/html" frameborder="0" height="245" width="100%" src="http://forecast.io/embed/#lat=47.4997222&lon=-122.0085278&name=Tiger Mountain"> </iframe>
+    </div>
+    
+    <div class="col-md-12 margin-bottom-20 too-wide">
+      <h3>Blipspot (<span id="blipspotDate"></span>)</h3>
+      <div id="blipspot"></div>
+    </div>
+    
+    <div class="col-md-6">
+      <div>
+        <h3>MM5</h3>
+        <img id="mm5" class="img-responsive center-block" src="/images/spinner.gif">
+      </div>
+    </div>
+    <div class="col-md-6">
+      <div>
+        <h3>Windgram</h3>
+        <img class="img-responsive" src="http://home.comcast.net/~wxtofly/Tiger_windgram.png">
+      </div>
+    </div>
+  </div>
+  
+  <div id="conditions" class="row">
+    
+    <div class="col-md-12">
+      <div class="headline"><h3>Current Conditions</h3></div>
+    </div>  
+  
+    <div class="col-md-6">
+      <h3>Launch</h3>
+      <img class="img-responsive" src="http://www.wunderground.com/cgi-bin/wxStationGraphAll?day={{day}}&amp;year={{year}}&amp;month={{month}}&amp;ID=KWAISSAQ25&amp;type=3&amp;width=500&amp;showtemp=1&amp;showpressure=1&amp;showwind=1&amp;showwinddir=1&amp;showrain=1" alt="Current Winds from Tiger North Launch NWPG ">
+
+    </div>
+    
+    <div class="col-md-6">
+      <h3>LZ</h3>
+      <img class="img-responsive" src="http://www.wunderground.com/cgi-bin/wxStationGraphAll?day={{day}}&year={{year}}&month={{month}}&ID=KWAISSAQ24&type=3&width=500&showtemp=1&showpressure=1&showwind=1&showwinddir=1&showrain=1" alt="Current Winds from Tiger North Launch NWPG ">
+    </div>
+    
+  </div>
+  
+  <div id="cameras" class="row">
+    
+    <div class="col-md-12">
+      <div class="headline"><h3>Cams</h3></div>
+    </div>
+    
+    <div class="col-md-6">
+      <h3>Frewsy Cam</h3>
+      <img class="img-responsive" src="http://chorlton.homeip.net/frewsylatest.jpg">
+    </div>
+    
+    <div class="col-md-6">
+      <h3>Wheeler Cam</h3>
+      <img class="img-responsive" src="http://lampi.us/images/Webcam.jpg">
+    </div>
+    
+  </div>
+  
+  <div id="waypoints" class="row">
+    
+    <div class="col-md-12 margin-bottom-20">
+      <div class="headline"><h3>Tag Waypoints</h3></div>
+    
+      <div>
+        <a type="button" class="btn-u btn-u-blue btn-u-lg" href="/waypoints/tiger.wpt">
+            Download Waypoints
+            <li class="fa fa-cloud-download" style="color: white; margin-left: 20px;"></li>
+        </a>
+      </div>
+    </div>
+    
+</div>
