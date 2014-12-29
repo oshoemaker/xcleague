@@ -59,7 +59,6 @@ function cleanBlipspot(table) {
 }
 
 function getDirection(degreeString) {
-  console.log('Processing wind direction')
   var degrees = parseInt(degreeString);
   var direction = directions[parseInt((degrees+11.25)/22.5)]
   return direction;

@@ -64,8 +64,7 @@ $(document).ready(function() {
     cleanBlipspot(table);
     
     $('#blipspot').html(table);
-    console.log(date);
-    $('#blipspotDate').html(date)
+    $('.blipDate').html(date)
   });
   
 });
