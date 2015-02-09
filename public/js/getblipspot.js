@@ -63,3 +63,4 @@ function getDirection(degreeString) {
   var direction = directions[parseInt((degrees+11.25)/22.5)]
   return direction;
 }
+

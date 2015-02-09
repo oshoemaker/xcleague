@@ -57,3 +57,16 @@
   overflow: auto;
   overflow-y: hidden;
 }
+
+.hidden {
+  display: none;
+}
+
+.input-warning  {
+  border-color: rgba(230, 100, 100, 1.0);
+  background-color : rgba(230, 100, 100, 0.1);
+}
+
+.warning-text > p, li, li a{
+  color: rgba(230, 100, 100, 1.0);
+}

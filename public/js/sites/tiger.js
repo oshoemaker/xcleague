@@ -67,4 +67,18 @@ $(document).ready(function() {
     $('.blipDate').html(date)
   });
   
+  
+  function myHandler(msg, url, line){
+    console.log('Testing! ' + msg)
+  }
+
+  //hook in all frames...
+  function addErrorHandler(win, handler){
+    win.onerror = handler;
+    for(var i=0;i<win.frames.length;i++){
+      addErrorHandler(win.frames[i], handler);
+    }
+  }
+  //start with this window... and add handler recursively
+  addErrorHandler(window, myHandler);
 });

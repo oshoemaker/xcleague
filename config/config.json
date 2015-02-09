@@ -1,0 +1,23 @@
+{
+  "development": {
+    "username": "xcleague-dev",
+    "password": "Th3Pa55w0rd4D3vUs3R",
+    "database": "xcleague_development",
+    "host": "127.0.0.1",
+    "dialect": "mysql"
+  },
+  "test": {
+    "username": "xcleague-test",
+    "password": "Th3Pa55w0rd4T35tUs3R",
+    "database": "xcleague_test",
+    "host": "127.0.0.1",
+    "dialect": "mysql"
+  },
+  "production": {
+    "username": "xcleague-prod",
+    "password": "Pr0duct10nPa55w0rd",
+    "database": "xcleague_prod",
+    "host": "127.0.0.1",
+    "dialect": "mysql"
+  }
+}
