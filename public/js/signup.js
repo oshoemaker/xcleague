@@ -327,10 +327,34 @@ function userCreated() {
   });
 }
 
+function userError(errors) {
+  var errorsDiv = $('#errors-div')
+  errorsDiv.html('<ul>');
+  for (var i = 0; errors.length > i; i++) {
+    errorsDiv.append('<li>' + errors[i] + '</li>');
+  }
+  
+  $('#signupForm').fadeOut(500, function(){
+    $('#userError').hide();
+    $('#userError').removeClass('hidden');
+    $('#userError').fadeIn(500);
+    
+  });
+}
+
+function tryAgain() {
+  $('#userError').fadeOut(500, function(){
+    $('#signupForm').fadeIn(500);
+  });
+}
+
 function createUser(formData) {
   $.post( "/signup.json", formData, function(data) {
     if (data.success) {
+      $('#submit-btn').removeAttr('disabled','');
       userCreated();
+    } else {
+      userError(data.errors)
     }
   }).fail(function() {
     
@@ -467,8 +491,13 @@ $(function() {
     
   });
   
+  $('#try-again-btn').click(function() {
+    tryAgain();
+  });
+  
   $('#submit-btn').click(function() {
     var userData = getFormData();
     createUser(userData);
   });
+  
 });

@@ -4,6 +4,9 @@ var debug = require('debug')('xcleague');
 var app = require('./app');
 var fs = require('fs');
 
+_logger = require('./lib/logger');
+//_config = require('./lib/conifg');
+
 /**
  *  Define the sample application.
  */
@@ -11,7 +14,9 @@ var SampleApp = function() {
 
   //  Scope.
   var self = this;
-
+  self.test = 'BALLS';
+  _logger = require('./lib/logger');
+  _config = require('./lib/conifg');
 
   /*  ================================================================  */
   /*  Helper functions.                         */

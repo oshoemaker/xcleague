@@ -1,4 +1,9 @@
 #!/usr/bin/env node
+
+// Create some global objects
+_logger = require('../lib/logger');
+_config = require('../lib/config');
+
 var debug = require('debug')('xcleague');
 var app = require('../app');
 

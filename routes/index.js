@@ -11,7 +11,11 @@ router.get('/index.:format', controllers.index);
 router.get('/signup.:format', controllers.signup);
 router.post('/signup.:format', controllers.signupPost);
 
-router.get('/login.:format', controllers.login);
+// Login
+router.get('/login.:format', controllers.loginGet);
+router.post('/login.:format', controllers.loginPost);
+
+
 router.get('/sites/:site', controllers.site);
 router.get('/upload/igc', controllers.getIgcUpload);
 router.post('/upload/igc', controllers.postIgcUpload);

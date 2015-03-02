@@ -20,6 +20,8 @@ exports.signupPost = function(req, res, next) {
   delete req.body.password;
   delete req.body.verifyPassword;
   
+  debug(req.body);
+  
   if (!pass) {
     errors.push('Password is required');
   }
@@ -48,8 +50,16 @@ exports.signupPost = function(req, res, next) {
 
   var userObj = req.body;
   
+  // Generate salt and password hash
   userObj.salt = bcrypt.genSaltSync(10);
-  userObj.hash = bcrypt.hashSync(pass, userObj.salt);
+  userObj.password = bcrypt.hashSync(pass, userObj.salt);
+  
+  // Fix some true fals fields from checkboxes
+  userObj.hasLicense = isTrue(userObj.hasLicense);
+  userObj.hasSmartphone = isTrue(userObj.hasSmartphone);
+  userObj.hasVehicle = isTrue(userObj.hasVehicle);
+  userObj.pilot = isTrue(userObj.pilot);
+  userObj.driver = isTrue(userObj.driver);
 
   debug("User object created: ");
   debug(userObj);
@@ -92,6 +102,11 @@ exports.signupPost = function(req, res, next) {
     }
     
   ], function(err) {
+    if (err === 'User already exists') { 
+      _logger.crit(err);
+      return HttpHelpers.respondError(req, res, viewTemplate, {userExists: true, errors: [err]});
+    }
+    
     
     if (err) {
       _logger.crit(err);
@@ -101,4 +116,8 @@ exports.signupPost = function(req, res, next) {
     HttpHelpers.respond(req, res, viewTemplate, { success: true});
     
   });
+}
+
+function isTrue(string) {
+  return (string == "true");
 }

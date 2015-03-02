@@ -1,0 +1,11 @@
+CREATE DATABASE xcleague_test;
+CREATE DATABASE xcleague_prod;
+
+CREATE USER 'xcleague-dev'@'localhost' IDENTIFIED BY 'Th3Pa55w0rd4D3vUs3R';
+GRANT ALL PRIVILEGES ON xcleague_development.* TO 'xcleague-dev'@'localhost';
+CREATE USER 'xcleague-test'@'localhost' IDENTIFIED BY 'Th3Pa55w0rd4T35tUs3R';
+GRANT ALL PRIVILEGES ON xcleague_test.* TO 'xcleague-test'@'localhost';
+CREATE USER 'xcleague-prod'@'%' IDENTIFIED BY 'Pr0duct10nPa55w0rd';
+GRANT ALL PRIVILEGES ON xcleague_prod.* TO 'xcleague-prod'@'%';
+
+FLUSH PRIVILEGES;

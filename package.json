@@ -25,6 +25,9 @@
     "mysql": "^2.5.4",
     "merge": "^1.2.0",
     "bcryptjs": "^2.1.0",
-    "async": "^0.9.0"
+    "async": "^0.9.0",
+    "yargs": "^3.4.5",
+    "jsonwebtoken": "^3.2.2",
+    "redis-rememberme": "^0.2.1"
   }
 }
