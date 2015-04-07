@@ -24,4 +24,6 @@ router.get('/mm5', controllers.getMm5);
 
 router.get('/blipspot/:site', controllers.getBlipspot);
 
+router.get('/dashboard', controllers.dashboard);
+
 module.exports = router;

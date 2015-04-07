@@ -36,18 +36,6 @@ $(document).ready(function() {
   });
   
   map.fitLatLngBounds(bounds);
-
-  getMm5(
-    markers['Launch'].lat,
-    markers['Launch'].lng, 
-    function(err,imgUrl){
-      if (err) {
-        return 
-      }
-      
-      $('#mm5').attr('src',imgUrl);
-    }
-  );
   
   getBlipspot('blipspotBlanchard.html', function(err,blipspot,date){
     var table = document.createElement('table');

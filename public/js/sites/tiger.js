@@ -1,7 +1,5 @@
 $(document).ready(function() {
   
-  var mm5url = 'http://www.atmos.washington.edu/mm5rt/data/current_gfs/images_d3/ps07.09.0000.snd.gif'
-  
   var markers = {
     'North Launch': {
       lat: 47.499722,
@@ -42,25 +40,6 @@ $(document).ready(function() {
   });
   
   map.fitLatLngBounds(bounds);
-
-  var $mm5hour = $('#mm5hour').selectize({
-    create: true,
-    sortField: 'text'
-  });
-  
-  var mm5hour = $('#mm5hour').val();
-
-  getMm5(
-    mm5url,
-    mm5hour,
-    function(err,imgUrl){
-      if (err === 'tooEarly') {
-        return 
-      }
-      
-      $('#mm5').attr('src',imgUrl);
-    }
-  );
   
   getBlipspot('blipspotTiger.html', function(err,blipspot,date){
     var table = document.createElement('table');

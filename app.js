@@ -8,6 +8,9 @@ var coookieSession = require('cookie-session');
 var hbs = require('express-hbs');
 var multer  = require('multer');
 
+_logger = require('./lib/logger');
+_config = require('./lib/conifg');
+
 var routes = require('./routes');
 
 var app = express();
