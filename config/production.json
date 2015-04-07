@@ -1,0 +1,8 @@
+{
+  "jwtSecret": "productionFortheXCL34gue",
+  "redis" : {
+    "host" : "pub-redis-19357.us-east-1-2.2.ec2.garantiadata.com",
+    "port" : "19357",
+    "pass" : "b6Wz3lnZJ7gPMQyK"
+  }
+}

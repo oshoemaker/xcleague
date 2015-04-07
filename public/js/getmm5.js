@@ -1,31 +1,15 @@
-function getMm5(lat, lon, callback) {
+function getMm5(url,requestedHour,callback) {
   var date = new Date();
+  var hour = date.getHours();
   
-  var params = {
-    date: getMm5DateString(date),
-    type: 'skewt',
-    domain: 'd3',
-    height: 100,
-    lat: lat,
-    lon: lon,
-    station: 'NA',
-    hours: 12
+  if (hour < 6) {
+    return callback('tooEarly');
   }
   
-  $.get('/mm5', params, function(data) {
-    if (data.success) {
-      return callback(null,data.imgUrl);
-    }
-    
-    callback('Could not get mm5 data');
-  });
+  if (!requestedHour) {
+    requestedHour = '09';
+  }
+  var newUrl = url.replace(/\.\d{2}\./,'.' + requestedHour + '.');
   
-}
-
-function getMm5DateString(date) {
-  var year = date.getFullYear();
-  var month = date.getMonth() + 1;
-  var day = date.getDate();
-  
-  return (year.toString() + month.toString() + day.toString() + '12');
+  callback(null,newUrl);
 }
