@@ -5,8 +5,8 @@ var router = express.Router();
 var controllers = require('../lib/controllers');
 var httpHelpers = require('../lib/httphelpers');
 
-router.get('/', controllers.index );
-router.get('/index.:format', controllers.index);
+router.get('/', httpHelpers.forceHttp, controllers.index );
+router.get('/index.:format', httpHelpers.forceHttp, controllers.index);
 
 // Signup
 router.get('/signup.:format', httpHelpers.forceHttps, controllers.signup);
