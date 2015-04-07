@@ -11,6 +11,7 @@ var redis = require("redis");
 
 _logger = require(__dirname + '/lib/logger');
 _config = require(__dirname + '/lib/config').file;
+
 _redis = redis.createClient(
   _config.redis.port,
   _config.redis.host,
@@ -18,8 +19,6 @@ _redis = redis.createClient(
     auth_pass: _config.redis.pass
   }
 );
-
-console.log(_redis);
 
 var routes = require('./routes');
 
