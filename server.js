@@ -4,8 +4,8 @@ var debug = require('debug')('xcleague');
 var app = require('./app');
 var fs = require('fs');
 
-_logger = require('./lib/logger');
-//_config = require('./lib/conifg');
+_logger;
+_config;
 
 /**
  *  Define the sample application.
