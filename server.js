@@ -3,7 +3,6 @@
 var debug = require('debug')('xcleague');
 var app = require('./app');
 var fs = require('fs');
-var ascoltatori = require('ascoltatori');
 
 /**
  *  Define the sample application.
