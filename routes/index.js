@@ -3,6 +3,7 @@
 var express = require('express');
 var router = express.Router();
 var controllers = require('../lib/controllers');
+var httpHelpers = require('../lib/httphelpers');
 
 router.get('/', controllers.index );
 router.get('/index.:format', controllers.index);
@@ -12,7 +13,7 @@ router.get('/signup.:format', controllers.signup);
 router.post('/signup.:format', controllers.signupPost);
 
 // Login
-router.get('/login.:format', controllers.loginGet);
+router.get('/login.:format', httpHelpers.forceHttps, controllers.loginGet);
 router.post('/login.:format', controllers.loginPost);
 
 
