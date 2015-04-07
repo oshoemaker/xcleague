@@ -8,7 +8,7 @@ var models = require("../models");
 var HttpHelpers = require('../lib/httphelpers');
 var debug = require('debug')('xcleague:login.js');
 
-var jwtSecret = _config.file.jwtSecret;
+var jwtSecret = _config.jwtSecret;
 
 exports.loginGet = function(req, res, next) {
   var viewTemplate = 'login';

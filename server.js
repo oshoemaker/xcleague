@@ -4,12 +4,6 @@ var debug = require('debug')('xcleague');
 var app = require('./app');
 var fs = require('fs');
 var ascoltatori = require('ascoltatori');
-var redis = require("redis");
-
-_logger = null;
-_config = null;
-_ascoltatore = null;
-_redis = null;
 
 /**
  *  Define the sample application.
@@ -19,15 +13,6 @@ var SampleApp = function() {
   //  Scope.
   var self = this;
 
-  _logger = require('./lib/logger');
-  _config = require('./lib/conifg');
-  _redis = redis.createClient(
-    _config.redis.port,
-    _config.redis.host,
-    {
-      auth_pass: _config.redis.pass
-    }
-  );
 
   /*  ================================================================  */
   /*  Helper functions.                         */

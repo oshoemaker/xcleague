@@ -7,9 +7,19 @@ var bodyParser = require('body-parser');
 var coookieSession = require('cookie-session');
 var hbs = require('express-hbs');
 var multer  = require('multer');
+var redis = require("redis");
 
-_logger = require('./lib/logger');
-_config = require('./lib/conifg');
+_logger = require(__dirname + '/lib/logger');
+_config = require(__dirname + '/lib/config').file;
+_redis = redis.createClient(
+  _config.redis.port,
+  _config.redis.host,
+  {
+    auth_pass: _config.redis.pass
+  }
+);
+
+console.log(_redis);
 
 var routes = require('./routes');
 
