@@ -14,7 +14,7 @@
     "cookie-session": "^1.1.0",
     "debug": "^2.1.1",
     "express": "~4.9.0",
-    "express-hbs": "^0.8.4",
+    "express-hbs": "^0.7.11",
     "hbs": "~2.7.0",
     "jsdom-nogyp": "^0.8.3",
     "jsonwebtoken": "^3.2.2",
