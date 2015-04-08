@@ -28,7 +28,7 @@ var app = express();
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'hbs');
 
-app.engine('hbs', hbs.express3({
+app.engine('hbs', hbs.express4({
   layoutsDir: __dirname + '/views/layouts',
   partialsDir: [__dirname + '/views/partials', __dirname + '/views/partialsJs'],
   defaultLayout: __dirname + '/views/layouts/default'
