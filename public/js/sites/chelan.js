@@ -15,6 +15,9 @@ $(document).ready(function() {
   }
   
   var map = new GMaps({
+    draggable: false,
+    scrollwheel: false,
+    panControl: false,
     div: '#map',
     lat: 48.6094444,
     lng: -122.4261111,

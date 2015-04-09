@@ -10,6 +10,9 @@ var multer  = require('multer');
 var redis = require("redis");
 var httpHelpers = require('./lib/httphelpers');
 
+var passport = require('passport');
+var LocalStrategy = require('passport-local').Strategy;
+
 _logger = require(__dirname + '/lib/logger');
 _config = require(__dirname + '/lib/config').file;
 
@@ -20,6 +23,21 @@ _redis = redis.createClient(
     auth_pass: _config.redis.pass
   }
 );
+
+passport.use(new LocalStrategy(
+  function(username, password, done) {
+    User.findOne({ username: username }, function (err, user) {
+      if (err) { return done(err); }
+      if (!user) {
+        return done(null, false, { message: 'Incorrect username.' });
+      }
+      if (!user.validPassword(password)) {
+        return done(null, false, { message: 'Incorrect password.' });
+      }
+      return done(null, user);
+    });
+  }
+));
 
 var routes = require('./routes');
 
@@ -42,7 +60,9 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
-app.use(multer({ dest: process.cwd() + '/uploads/tmp/'}))
+app.use(multer({ dest: process.cwd() + '/uploads/tmp/'}));
+app.use(passport.initialize());
+app.use(passport.session());
 app.use(httpHelpers.forceHttps);
 
 app.use('/', routes);
