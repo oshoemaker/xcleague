@@ -5,26 +5,26 @@ var router = express.Router();
 var controllers = require('../lib/controllers');
 var httpHelpers = require('../lib/httphelpers');
 
-router.get('/', httpHelpers.forceHttp, controllers.index );
-router.get('/index.:format', httpHelpers.forceHttp, controllers.index);
+router.get('/', controllers.index );
+router.get('/index.:format', controllers.index);
 
 // Signup
-router.get('/signup.:format', httpHelpers.forceHttps, controllers.signup);
-router.post('/signup.:format', httpHelpers.forceHttps, controllers.signupPost);
+router.get('/signup.:format', controllers.signup);
+router.post('/signup.:format', controllers.signupPost);
 
 // Login
-router.get('/login.:format', httpHelpers.forceHttps, controllers.loginGet);
-router.post('/login.:format', httpHelpers.forceHttps, controllers.loginPost);
+router.get('/login.:format', controllers.loginGet);
+router.post('/login.:format', controllers.loginPost);
 
 // IGC Upload
-router.get('/upload/igc', httpHelpers.forceHttps, controllers.getIgcUpload);
-router.post('/upload/igc', httpHelpers.forceHttps, controllers.postIgcUpload);
+router.get('/upload/igc', controllers.getIgcUpload);
+router.post('/upload/igc', controllers.postIgcUpload);
 
 // Site information
-router.get('/sites/:site', httpHelpers.forceHttp, controllers.site);
+router.get('/sites/:site', controllers.site);
 
-router.get('/blipspot/:site', httpHelpers.forceHttp, controllers.getBlipspot);
+router.get('/blipspot/:site', controllers.getBlipspot);
 
-router.get('/dashboard', httpHelpers.forceHttps, controllers.dashboard);
+router.get('/dashboard', controllers.dashboard);
 
 module.exports = router;

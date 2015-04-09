@@ -8,6 +8,7 @@ var coookieSession = require('cookie-session');
 var hbs = require('express-hbs');
 var multer  = require('multer');
 var redis = require("redis");
+var httpHelpers = require('./lib/httphelpers');
 
 _logger = require(__dirname + '/lib/logger');
 _config = require(__dirname + '/lib/config').file;
@@ -42,6 +43,7 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(multer({ dest: process.cwd() + '/uploads/tmp/'}))
+app.use(httpHelpers.forceHttps);
 
 app.use('/', routes);
 
